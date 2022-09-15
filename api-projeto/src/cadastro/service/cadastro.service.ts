@@ -14,6 +14,9 @@ export class cadastroService {
 
     async findAll(): Promise<Cadastro[]> {
         return this.cadastroRepository.find({
+            relations: {
+                usuario: true
+            }
         })
     }
 
@@ -21,6 +24,9 @@ export class cadastroService {
         let cadastro = await this.cadastroRepository.findOne({
             where: {
                 id
+            },
+            relations: {
+                usuario: true
             }
         })
         if (!cadastro)
@@ -33,6 +39,9 @@ export class cadastroService {
             where: {
                 genero: ILike(`%${genero}%`)
             },
+            relations: {
+                usuario: true
+            }
         })
     }
 
@@ -42,6 +51,9 @@ export class cadastroService {
             where: {
                 nome: ILike(`%${nome}%`)
             },
+            relations: {
+                usuario: true
+            }
         })
     }
 

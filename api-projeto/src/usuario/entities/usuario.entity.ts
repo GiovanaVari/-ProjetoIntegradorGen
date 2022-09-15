@@ -21,6 +21,7 @@ export class Usuario{
     postagem: Postagem
 
     @OneToOne(() => Cadastro, (cadastro) => cadastro.usuario) 
+    @JoinColumn()
     cadastro: Cadastro
 
 }
