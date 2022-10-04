@@ -22,7 +22,6 @@ export class Postagem{
     @ApiProperty()
     imagem: string 
 
-
     @ManyToOne(() => Tema, (tema) => tema.postagem,{
         onDelete: "CASCADE"
         
@@ -35,7 +34,6 @@ export class Postagem{
         
     })
     @ApiProperty({type: () => Usuario})
-    
     usuario: Usuario
 
 }

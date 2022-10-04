@@ -16,7 +16,8 @@ export class usuarioService {
         return this.usuarioRepository.find({
 
             relations: {
-                cadastro: true
+                cadastro: true,
+                postagem: true
             }
 
         })
@@ -28,7 +29,8 @@ export class usuarioService {
                 id
             },
             relations: {
-                cadastro: true
+                cadastro: true,
+                postagem: true
             }
 
         })
@@ -44,8 +46,9 @@ export class usuarioService {
             where: {
                 nickname: ILike(`%${nickname}%`)
             },
-            relations : {
-                cadastro: true
+            relations: {
+                cadastro: true,
+                postagem: true
             }
         })
     }

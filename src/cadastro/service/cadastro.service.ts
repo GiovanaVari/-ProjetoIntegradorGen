@@ -64,14 +64,14 @@ export class cadastroService {
     async update(cadastro: Cadastro): Promise<Cadastro> {
         let cadastroUpDate = await this.findById(cadastro.id)
         if (!cadastroUpDate || !cadastro.id)
-            throw new HttpException('cadastro não encontrado!', HttpStatus.NOT_FOUND)
+            throw new HttpException('Cadastro não encontrado!', HttpStatus.NOT_FOUND)
         return this.cadastroRepository.save(cadastro)
     }
 
     async delete(id: number): Promise<DeleteResult> {
         let cadastroDelete = await this.findById(id)
         if (!cadastroDelete)
-            throw new HttpException('cadastro não foi encontrado!', HttpStatus.NOT_FOUND)
+            throw new HttpException('Cadastro não foi encontrado!', HttpStatus.NOT_FOUND)
         return this.cadastroRepository.delete(id)
     }
 }
